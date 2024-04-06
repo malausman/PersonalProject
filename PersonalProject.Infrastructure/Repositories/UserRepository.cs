@@ -27,10 +27,11 @@ namespace PersonalProject.Infrastructure.Repositories
                 using (var connection = new SqlConnection(configuration.GetConnectionString("DefaultConnection")))
                 {
                     connection.Open();
-                    DynamicParameters dynamicParameters = new DynamicParameters();
-                   // dynamicParameters.Add("cat_id", entity.cat_id);
-                    //Other params go here 
-                    var result = await connection.ExecuteAsync("CreateNewUser", dynamicParameters, commandType: System.Data.CommandType.StoredProcedure);
+                    DynamicParameters parameters = new DynamicParameters();
+                    parameters.Add("name", entity.name);
+                    parameters.Add("password", entity.password);
+                    parameters.Add("email", entity.email); 
+                    var result = await connection.ExecuteAsync("sp_CreateUser", parameters, commandType: System.Data.CommandType.StoredProcedure);
                     return result;
                 }
             }
@@ -65,5 +66,7 @@ namespace PersonalProject.Infrastructure.Repositories
         {
             throw new NotImplementedException();
         }
+
+        
     }
 }

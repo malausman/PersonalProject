@@ -10,6 +10,7 @@ namespace PersonalProject.Domain.Entities
     {
        public string name { get; set; }
        public string password { get; set; }
-        
+        public string email { get; set; }
+
     }
 }

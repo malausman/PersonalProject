@@ -10,6 +10,6 @@ namespace PersonalProject.Domain.IRepositories
 {
     public  interface IUserRepository: IRepository<userInfo>
     {
-        Task<userInfo> RegisterUser(userInfo userInfo);
+        Task<int> AddAsync(userInfo userInfo);
     }
 }

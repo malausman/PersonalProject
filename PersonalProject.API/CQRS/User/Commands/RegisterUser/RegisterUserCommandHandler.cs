@@ -22,15 +22,16 @@ namespace PersonalProject.API.Application.User.Commands.RegisterUser
             {
                  name = request.name,
                 password = request.password,
+                email =request.email
             };
              var res=await _userRepository.AddAsync(user);
             if (res == -1)
             {
-                return AppServicesResponse.OkResponse("user already exists");
+                return ApiResponse.Ok("This user already exists!");
             }
             else
             {
-                return AppServicesResponse.OkResponse("New user created successfully");
+                return ApiResponse.Ok("New user created successfully!");
             }
 
              

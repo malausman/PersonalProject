@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace PersonalProject.Utils
 {
-    public static class AppServicesResponse
+    public static class ApiResponse
     {
-        public static ApiResponseDto OkResponse(dynamic response)
+        public static ApiResponseDto Ok(dynamic response)
         {
             return new ApiResponseDto
             {
