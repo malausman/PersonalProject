@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CQRS\" />
+    <Folder Include="CQRS\User\Queries\" />
     <Folder Include="Middlewares\" />
   </ItemGroup>
 

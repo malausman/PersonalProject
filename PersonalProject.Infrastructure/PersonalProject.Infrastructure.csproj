@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,12 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PersonalProject.Domain\PersonalProject.Domain.csproj" />
-    <ProjectReference Include="..\PersonalProject.Utilities\PersonalProject.Utilities.csproj" />
+    <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\" />
+    <ProjectReference Include="..\PersonalProject.Domain\PersonalProject.Domain.csproj" />
+    <ProjectReference Include="..\PersonalProject.Utilities\PersonalProject.Utilities.csproj" />
   </ItemGroup>
 
 </Project>
