@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
+using Cqrs.Hosts;
 
 namespace PersonalProject.Infrastructure
 {
@@ -13,8 +15,12 @@ namespace PersonalProject.Infrastructure
     {
         public static IServiceCollection ConfigureLMSData(this IServiceCollection services)
         {
-            services.AddScoped<IUserRepository, UserRepository>();
-           // services.AddScoped<IUserRefreshTokenRepository, UserRefreshTokenRepository>();
+
+            //services.AddMediatR(typeof(StartUp).GetTypeInfo().Assembly);
+            //services.AddMediatR(typeof(StartUp));
+           // services.AddMediatR((Assembly.GetExecutingAssembly()));
+            services.AddTransient<IUserRepository, UserRepository>();
+            // services.AddScoped<IUserRefreshTokenRepository, UserRefreshTokenRepository>();
             //services.AddScoped<IUserRepository, NMemoryUserRepository>();
             //services.AddScoped<IUserRefreshTokenRepository, NMemoryUserRefreshTokenRepository>();
             return services;

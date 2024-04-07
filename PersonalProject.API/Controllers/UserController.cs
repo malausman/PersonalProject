@@ -10,15 +10,25 @@ namespace PersonalProject.API.Controllers
     [Route("[controller]")]
     public class UserController : DefaultController
     {
-        private readonly ILogger<UserController> _logger;
-        public UserController(ILogger<UserController> logger)
+        private readonly IMediator _mediator;
+        public UserController(IMediator mediator)
         {
-            _logger = logger;
+            _mediator = mediator;
         }
-
         [AllowAnonymous]
         [HttpPost("register")]
         public async Task<ApiResponseDto> RegisterUser(RegisterUserCommand model)
+        {
+            if (model == null)
+            {
+                return ApiResponse.BadRequest("Model is null");
+            }
+            return await _mediator.Send(model);
+
+        }
+        [AllowAnonymous]
+        [HttpPost("register1")]
+        public async Task<ApiResponseDto> RegisterUser1(RegisterUserCommand model)
         {
             return await Mediator.Send(model);
 

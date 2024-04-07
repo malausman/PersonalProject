@@ -7,7 +7,7 @@ namespace PersonalProject.API.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
-    [EnableCors]
+   // [EnableCors]
     public abstract class DefaultController : ControllerBase
     {
         private IMediator _mediator;

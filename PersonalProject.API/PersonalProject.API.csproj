@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CQRS\Authentication\**" />
+    <Content Remove="CQRS\Authentication\**" />
+    <EmbeddedResource Remove="CQRS\Authentication\**" />
+    <None Remove="CQRS\Authentication\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.9.0" />
     <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
@@ -18,7 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CQRS\Authentication\" />
     <Folder Include="CQRS\User\Queries\" />
     <Folder Include="Middlewares\" />
   </ItemGroup>

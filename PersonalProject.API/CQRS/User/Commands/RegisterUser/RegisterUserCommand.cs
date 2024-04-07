@@ -1,5 +1,4 @@
 ﻿using System.Security.Permissions;
-using AppService.API.Application.User.Model;
 using MediatR;
 using Microsoft.Graph.Models;
 using PersonalProject.Utilities;
