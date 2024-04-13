@@ -1,9 +1,6 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Graph.Models;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using PersonalProject.API.CQRS.User.Commands.createPost;
 using PersonalProject.Utils;
 
@@ -29,21 +26,7 @@ namespace PersonalProject.API.Controllers
             return await _mediator.Send(model);
 
         }
-        [Authorize]
-        [HttpGet]
-        public IActionResult Get()
-        {
-            var data = new
-            {
-                name = "John Doe",
-                email = "john.doe@example.com",
-                dateOfBirth = "01/01/2000" // Slash in the date format
-            };
 
-            return Ok(data);
-            // Return the JSON response
-            
-        }
-
+        
     }
 }
