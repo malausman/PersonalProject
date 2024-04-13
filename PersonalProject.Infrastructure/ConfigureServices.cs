@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 using Cqrs.Hosts;
+using PersonalProject.Domain.Repositories;
 
 namespace PersonalProject.Infrastructure
 {
@@ -22,6 +23,7 @@ namespace PersonalProject.Infrastructure
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IPostRepository, PostRepository>();
             services.AddTransient<ICommentRepository, CommentRepository>();
+            services.AddScoped<IUserRefreshTokenRepository, UserRefreshTokenRepository>();
             // services.AddScoped<IUserRefreshTokenRepository, UserRefreshTokenRepository>();
             //services.AddScoped<IUserRepository, NMemoryUserRepository>();
             //services.AddScoped<IUserRefreshTokenRepository, NMemoryUserRefreshTokenRepository>();
