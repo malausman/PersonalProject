@@ -8,9 +8,13 @@
 
   <ItemGroup>
     <Compile Remove="CQRS\Authentication\**" />
+    <Compile Remove="CQRS\User\Queries\**" />
     <Content Remove="CQRS\Authentication\**" />
+    <Content Remove="CQRS\User\Queries\**" />
     <EmbeddedResource Remove="CQRS\Authentication\**" />
+    <EmbeddedResource Remove="CQRS\User\Queries\**" />
     <None Remove="CQRS\Authentication\**" />
+    <None Remove="CQRS\User\Queries\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,7 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CQRS\User\Queries\" />
+    <Folder Include="CQRS\User\Commands\" />
     <Folder Include="Middlewares\" />
   </ItemGroup>
 

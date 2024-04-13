@@ -20,6 +20,8 @@ namespace PersonalProject.Infrastructure
             //services.AddMediatR(typeof(StartUp));
            // services.AddMediatR((Assembly.GetExecutingAssembly()));
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IPostRepository, PostRepository>();
+            services.AddTransient<ICommentRepository, CommentRepository>();
             // services.AddScoped<IUserRefreshTokenRepository, UserRefreshTokenRepository>();
             //services.AddScoped<IUserRepository, NMemoryUserRepository>();
             //services.AddScoped<IUserRefreshTokenRepository, NMemoryUserRefreshTokenRepository>();

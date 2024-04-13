@@ -1,23 +1,23 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using PersonalProject.API.CQRS.User.Commands.RegisterUser;
+using PersonalProject.API.CQRS.User.Commands.createComments;
 using PersonalProject.Utils;
 
 namespace PersonalProject.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class UserController : DefaultController
+    public class CommentsController : DefaultController
     {
         private readonly IMediator _mediator;
-        public UserController(IMediator mediator)
+        public CommentsController(IMediator mediator)
         {
             _mediator = mediator;
         }
         [AllowAnonymous]
-        [HttpPost("register")]
-        public async Task<ApiResponseDto> RegisterUser(RegisterUserCommand model)
+        [HttpPost("createComments")]
+        public async Task<ApiResponseDto> createPost(createCommentCommand model)
         {
             if (model == null)
             {
@@ -26,12 +26,6 @@ namespace PersonalProject.API.Controllers
             return await _mediator.Send(model);
 
         }
-        [AllowAnonymous]
-        [HttpPost("register1")]
-        public async Task<ApiResponseDto> RegisterUser1(RegisterUserCommand model)
-        {
-            return await Mediator.Send(model);
-
-        }
+        
     }
 }
