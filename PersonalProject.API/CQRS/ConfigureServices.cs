@@ -2,20 +2,18 @@
 using FluentValidation;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using PersonalProject.API.Application.Validations;
-using PersonalProject.API.CQRS.User.Commands.RegisterUser;
 using System.Text;
 
 namespace PersonalProject.API.Application
 {
     public static class ConfigureServices
     {
-        public static IServiceCollection ConfigureABCServices(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection ConfigureBugsTrackingServices(this IServiceCollection services, IConfiguration configuration)
         {
            // services.AddScoped<ITokenService, TokenService>();
            // services.AddScoped<IClaimsManager, ClaimsManager>();
            // services.AddScoped<IValidator<LoginUserQuery>, LoginUserQueryValidator>();
-            services.AddScoped<IValidator<RegisterUserCommand>, RegisterUserCommandValidator>();
+           // services.AddScoped<IValidator<createPostCommand>, RegisterUserCommandValidator>();
             
             services.AddHttpContextAccessor();
 

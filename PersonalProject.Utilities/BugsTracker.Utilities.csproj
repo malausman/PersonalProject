@@ -13,4 +13,8 @@
     <PackageReference Include="Microsoft.Graph" Version="5.47.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="SharedFunctions\" />
+  </ItemGroup>
+
 </Project>

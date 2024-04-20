@@ -8,9 +8,17 @@
 
   <ItemGroup>
     <Compile Remove="CQRS\Authentication\**" />
+    <Compile Remove="CQRS\User\Queries\**" />
+    <Compile Remove="Middlewares\**" />
     <Content Remove="CQRS\Authentication\**" />
+    <Content Remove="CQRS\User\Queries\**" />
+    <Content Remove="Middlewares\**" />
     <EmbeddedResource Remove="CQRS\Authentication\**" />
+    <EmbeddedResource Remove="CQRS\User\Queries\**" />
+    <EmbeddedResource Remove="Middlewares\**" />
     <None Remove="CQRS\Authentication\**" />
+    <None Remove="CQRS\User\Queries\**" />
+    <None Remove="Middlewares\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,14 +28,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PersonalProject.Domain\PersonalProject.Domain.csproj" />
-    <ProjectReference Include="..\PersonalProject.Infrastructure\PersonalProject.Infrastructure.csproj" />
-    <ProjectReference Include="..\PersonalProject.Utilities\PersonalProject.Utilities.csproj" />
+    <ProjectReference Include="..\PersonalProject.Domain\BugsTracker.Domain.csproj" />
+    <ProjectReference Include="..\PersonalProject.Infrastructure\BugsTracker.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CQRS\User\Queries\" />
-    <Folder Include="Middlewares\" />
+    <Folder Include="CQRS\CreateBugs\Queries\" />
+    <Folder Include="CQRS\User\Commands\" />
+    <Folder Include="Middleware\" />
   </ItemGroup>
 
 </Project>

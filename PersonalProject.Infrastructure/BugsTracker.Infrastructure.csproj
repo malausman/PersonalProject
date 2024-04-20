@@ -15,8 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PersonalProject.Domain\PersonalProject.Domain.csproj" />
-    <ProjectReference Include="..\PersonalProject.Utilities\PersonalProject.Utilities.csproj" />
+    <ProjectReference Include="..\PersonalProject.Domain\BugsTracker.Domain.csproj" />
   </ItemGroup>
 
 </Project>

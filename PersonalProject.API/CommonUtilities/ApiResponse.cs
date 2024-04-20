@@ -5,35 +5,42 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersonalProject.Utils
+namespace PersonalProject.CommonUtilities
 {
     public static class ApiResponse
     {
-        public static ApiResponseDto Ok(dynamic response)
+        public static ApiResponseDTO Ok(dynamic response)
         {
-            return new ApiResponseDto
+            return new ApiResponseDTO
             {
                 Response = response,
                 IsSuccessful = true,
                 StatusCode = (int)HttpStatusCode.OK,
+                Message = response.ToString(),
+                Timestamp = DateTime.Now
+                
             };
         }
-        public static ApiResponseDto BadRequest(dynamic response)
+        public static ApiResponseDTO BadRequest(dynamic response)
         {
-            return new ApiResponseDto
+            return new ApiResponseDTO
             {
                 Response = response,
                 IsSuccessful = false,
                 StatusCode = (int)HttpStatusCode.BadRequest,
+                Message = response.ToString(),
+                Timestamp = DateTime.Now
             };
         }
-        public static ApiResponseDto UnauthorizedResponse(dynamic response)
+        public static ApiResponseDTO Unauthorized(dynamic response)
         {
-            return new ApiResponseDto
+            return new ApiResponseDTO
             {
                 Response = response,
                 IsSuccessful = false,
                 StatusCode = (int)HttpStatusCode.Unauthorized,
+                Message = response.ToString(),
+                Timestamp = DateTime.Now
             };
         }
     }

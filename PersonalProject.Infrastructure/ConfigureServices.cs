@@ -13,16 +13,13 @@ namespace PersonalProject.Infrastructure
 {
     public static class ConfigureServices
     {
-        public static IServiceCollection ConfigureLMSData(this IServiceCollection services)
+        public static IServiceCollection ConfigureBugsData(this IServiceCollection services)
         {
 
-            //services.AddMediatR(typeof(StartUp).GetTypeInfo().Assembly);
-            //services.AddMediatR(typeof(StartUp));
-           // services.AddMediatR((Assembly.GetExecutingAssembly()));
+           
             services.AddTransient<IUserRepository, UserRepository>();
-            // services.AddScoped<IUserRefreshTokenRepository, UserRefreshTokenRepository>();
-            //services.AddScoped<IUserRepository, NMemoryUserRepository>();
-            //services.AddScoped<IUserRefreshTokenRepository, NMemoryUserRefreshTokenRepository>();
+            services.AddTransient<IBugsRepository, BugsRepository>();
+            
             return services;
         }
     }
